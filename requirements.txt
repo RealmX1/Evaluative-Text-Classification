@@ -1,4 +1,5 @@
 pandas
+openai
 scikit-learn
 torch
 transformers
@@ -9,5 +10,3 @@ pytest
 pyyaml 
 tabulate
 wandb
-openai
-tenacity

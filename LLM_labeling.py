@@ -1,3 +1,5 @@
+import os
+
 import pandas as pd
 import asyncio
 import json
@@ -110,8 +112,10 @@ async def _classify_text(text, topic):
 
 # Create a new dataframe to store results
 async def main():
+    input_path = os.path.join('data', '20_newsgroup_pruned.csv')
+    save_path = os.path.join('data', 'classification_results.csv')
     # Read from 20_newsgroup_split.csv
-    df = pd.read_csv('raw_20newsgroup.csv')
+    df = pd.read_csv(input_path)
     df = df.dropna(subset=['text'])
     df = df[df['text'].str.strip() != '']
     df = df[df['text'].str.len() > 4]
@@ -164,8 +168,8 @@ async def main():
     results_df = results_df[['topic', 'text', 'classification', 'analysis']]
     
     # Save results to CSV
-    results_df.to_csv('classification_results.csv', index=False)
-    print(f"\nResults saved to classification_results.csv")
+    results_df.to_csv(save_path, index=False)
+    print(f"\nResults saved to {save_path}")
     print("\nSample of results:")
     print(results_df[['topic', 'classification', 'analysis']].head())
 
