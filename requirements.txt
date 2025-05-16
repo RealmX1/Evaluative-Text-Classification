@@ -1,0 +1,13 @@
+pandas
+scikit-learn
+torch
+transformers
+peft
+matplotlib
+seaborn
+pytest
+pyyaml 
+tabulate
+wandb
+openai
+tenacity

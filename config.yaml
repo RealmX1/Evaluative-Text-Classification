@@ -1,0 +1,34 @@
+# config.yaml
+
+# Data paths
+data_path: data/classification_results.csv
+
+# Model parameters
+model_name: distilroberta-base
+max_length: 128
+num_labels: 2
+
+# Training parameters
+epochs: 10
+batch_size: 200
+learning_rate: 0.00002
+random_state: 42
+test_size: 0.2
+
+# LoRA adapter parameters
+lora_rank: 16
+lora_alpha: 64
+lora_dropout: 0.05
+lora_train_bias: none
+
+# LoRA computation parameters
+lora_epochs: 10
+lora_batch_size: 200
+lora_learning_rate: 0.00002
+
+# Output paths
+output_dir: outputs/
+plots_dir: plots/ 
+
+# WandB parameters
+wandb_project: Opionated Text Classification
